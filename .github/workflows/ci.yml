@@ -1,0 +1,11 @@
+Name: CI
+on: [push, pull_request]
+
+jobs:
+  presubmit:
+    name: Presubmit
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - run: PRESUBMIT.py
